@@ -4,14 +4,16 @@ import Card from "./Card";
 function Products( {items} ) {
     return (
         <div>
-       <nav class="navbar bg-light">
-            <form class="container-fluid">
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">search</span>
-                    <input type="text" class="form-control" placeholder="search item" aria-label="Username" aria-describedby="basic-addon1"/>
+        <div >
+       <nav className="navbar bg-light">
+            <form className="container-fluid">
+                <div className="input-group">
+                    <span className="input-group-text" id="basic-addon1">search</span>
+                    <input type="text" className="form-control" placeholder="search item" aria-label="Username" aria-describedby="basic-addon1"/>
                 </div>
             </form>
         </nav>
+        </div>
         <div className="container">
             <div className="row">
                 {items.map(item => (
