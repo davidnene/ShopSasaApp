@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import Card from './Card'
 import './App.css';
+import NavBar from './NavBar';
+import {Route, Switch} from 'react-router-dom'
+import FrontPage from './FrontPage';
+import Products from './Products';
 
 function App() {
+  const [items, setItems] = useState([]);
+
+  function handleItems() {
+    fetch('https://fakestoreapi.com/products')
+    .then(res => res.json())
+    .then(items => setItems(items))
+  };
+
+  console.log(items)
+
+  useEffect(handleItems, []);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <p><strong>Shop Sasa Ltd</strong></p>
+      <NavBar/>
+      <Switch>
+        <Route exact path ="/products">
+          <Products items={items}/>
+        </Route>
+        <Route exact path="/">
+          <FrontPage/>
+        </Route>
+      </Switch>
     </div>
   );
 }
