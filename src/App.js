@@ -5,6 +5,8 @@ import NavBar from './NavBar';
 import {Route, Switch} from 'react-router-dom'
 import FrontPage from './FrontPage';
 import Products from './Products';
+import Login from './Login';
+import Checkout from './Checkout';
 
 function App() {
   const [items, setItems] = useState([]);
@@ -20,15 +22,22 @@ function App() {
   useEffect(handleItems, []);
   
   return (
-    <div>
-      <p><strong>Shop Sasa Ltd</strong></p>
-      <NavBar/>
+    <div> 
       <Switch>
         <Route exact path ="/products">
+          <NavBar/>
           <Products items={items}/>
         </Route>
-        <Route exact path="/">
+        <Route exact path="/home">
+        <NavBar/>
           <FrontPage/>
+        </Route>
+        <Route path="/checkout">
+          <NavBar/>
+          <Checkout/>
+        </Route>
+        <Route path="/">
+          <Login/>
         </Route>
       </Switch>
     </div>
