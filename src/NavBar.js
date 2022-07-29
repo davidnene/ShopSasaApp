@@ -19,13 +19,13 @@ function NavBar() {
           <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link" exact aria-current="page" to="/home">Home</Link>
+                <Link className="nav-link" exact="true" aria-current="page" to="/home">Home</Link>
               </li>
               <li className="nav-item">
-              <Link className="nav-link" exact aria-current="page" to="/products">Products</Link>
+              <Link className="nav-link" exact="true" aria-current="page" to="/products">Products</Link>
               </li>
               <li className="nav-item">
-              <Link className="nav-link" exact aria-current="page" to="/checkout">Checkout</Link>
+              <Link className="nav-link" exact="true" aria-current="page" to="/checkout">Checkout</Link>
               </li>
               <li className="nav-item">
               <button style={{position:"absolute", right:"100px"}} onClick={handleLogOut} type="submit" className="btn btn-warning">logout</button>
