@@ -1,6 +1,8 @@
 ## Project Description
 Shop Sasa is a shopping store web app that allows users to search and shop for their favourite products.
 
+**Live link** [Shop-Sasa](https://shop-sasa.netlify.app/)
+
 **The project leverages:**
 - React components, props and hooks to ensure the best User Experience
 - Bootstrap CSS for the best User Interface 
