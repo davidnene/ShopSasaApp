@@ -5,7 +5,6 @@ function Card({ title, price, image, id, toCartCheckout, setToCartCheckout }) {
     
     const [handleToCart, setHandleToCart] = useState(false);
 
-
     function handleAddClick() {
         
         if (handleToCart === false){
