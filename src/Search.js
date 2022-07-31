@@ -1,9 +1,6 @@
-import React, { useState } from "react";
 import Card from "./Card";
 
-function Search({ items }) {
-
-    const [input, setInput] = useState('');
+function Search({ items, input, setInput }) {
     
     function handleOnChange(e) {
         setInput(e.target.value)
