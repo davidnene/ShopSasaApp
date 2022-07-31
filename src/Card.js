@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import {Link} from "react-router-dom";
 
-function Card({ item, title, price, image, id, toCartCheckout, setToCartCheckout}) {
+function Card({ title, price, image, id, toCartCheckout, setToCartCheckout }) {
     const [handleToCart, setHandleToCart] = useState(false)
 
 

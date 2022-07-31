@@ -1,4 +1,24 @@
-# Getting Started with Create React App
+## Project Description
+Shop Sasa is a shopping store web app that allows users to search and shop for their favourite products.
+
+**The project leverages:**
+- React components, props and hooks to ensure the best User Experience
+- Bootstrap CSS for the best User Interface 
+
+## User Journey
+- A user can login and get redirected to home page
+- A user can navigate through products page using the navigation bar or a `Start shopping` button in the home tab
+- A user can search for a product using the search bar
+- A user can view item details using `see details` link
+- A user can an add item to cart
+- Items added to cart can be viewed in the checkout page
+- A user can remove item from cart
+- A user can logout using the logout button
+
+## Deployment date
+31/July/2022
+
+## Technology used
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
