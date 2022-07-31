@@ -1,7 +1,7 @@
 import React from "react";
 import CheckoutCard from "./CheckoutCard"
 
-function Checkout({addToCart, setAddToCart, handleToCart, setHandleToCart}) {
+function Checkout({ addToCart, handleToCart, setHandleToCart }) {
 return (
     <div>
         {addToCart.map(item =>        
@@ -9,7 +9,7 @@ return (
         ))}
     </div>
 )
-}
+};
 
 
 export default Checkout;

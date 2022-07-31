@@ -4,20 +4,22 @@ import { useState } from "react";
 import NavBar from "./NavBar";
 
 function DisplayItem({ items }) {
-    const [toCart, setToCart] = useState(false)
+    
+    const [toCart, setToCart] = useState(false);
     const history = useHistory()
 
     function handleAddClick() {
         setToCart(!toCart)
-    }
+    };
 
     function handleClickBack(){
         history.push("/products")
-    }
+    };
 
-    const btn = toCart?"btn btn-success":"btn btn-warning"
+    const btn = toCart?"btn btn-success":"btn btn-warning";
     const params = useParams()
-    const id = params.id - 1
+    const id = params.id - 1;
+    
     return (
         <div>
              <div>

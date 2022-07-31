@@ -10,8 +10,8 @@ import DisplayItem from './DisplayItem';
 
 function App() {
   const [items, setItems] = useState([]);
-  const [addToCart, setAddToCart] = useState([])
-  const [handleToCart, setHandleToCart] = useState(false)
+  const [addToCart, setAddToCart] = useState([]);
+  const [handleToCart, setHandleToCart] = useState(false);
  
   function handleItems() {
     fetch('https://fakestoreapi.com/products')

@@ -3,13 +3,14 @@ import Card from "./Card";
 
 function Search({ items }) {
 
-    const [input, setInput] = useState('')
+    const [input, setInput] = useState('');
+    
     function handleOnChange(e) {
         setInput(e.target.value)
-    }
+    };
 
-    const displaySearch = items.filter((item)=> item.title.toLowerCase().includes(input.toLowerCase()))
-    console.log(displaySearch)
+    const displaySearch = items.filter((item)=> item.title.toLowerCase().includes(input.toLowerCase()));
+    
 
     return (
         <div >
@@ -23,9 +24,9 @@ function Search({ items }) {
                 </nav>
                 <div className="container">
                     <div className="row">
-                {input.length > 0? displaySearch.map(item => (
-                        <Card item = {item} title = {item.title} price = {item.price} image = {item.image} key={item.id} id = {item.id}/>
-                    )): null}
+                        {input.length > 0? displaySearch.map(item => (
+                                <Card item = {item} title = {item.title} price = {item.price} image = {item.image} key={item.id} id = {item.id}/>
+                            )): null}
                     </div>
                 </div>
             </div>

@@ -1,16 +1,16 @@
 import React from "react";
-import {Link} from "react-router-dom"
-import {useHistory} from "react-router-dom"
+import {Link} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 function NavBar() {
 
-  const history = useHistory()
+  const history = useHistory();
 
   function handleLogOut() {
-      history.push("/")
+      history.push("/");
   }
     return (
-        <nav className="navbar navbar-expand-lg bg-light">
+      <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -22,13 +22,13 @@ function NavBar() {
                 <Link className="nav-link" exact="true" aria-current="page" to="/home">Home</Link>
               </li>
               <li className="nav-item">
-              <Link className="nav-link" exact="true" aria-current="page" to="/products">Products</Link>
+                <Link className="nav-link" exact="true" aria-current="page" to="/products">Products</Link>
               </li>
               <li className="nav-item">
-              <Link className="nav-link" exact="true" aria-current="page" to="/checkout">Checkout</Link>
+                <Link className="nav-link" exact="true" aria-current="page" to="/checkout">Checkout</Link>
               </li>
               <li className="nav-item">
-              <button style={{position:"absolute", right:"100px"}} onClick={handleLogOut} type="submit" className="btn btn-warning">logout</button>
+                <button style={{position:"absolute", right:"100px"}} onClick={handleLogOut} type="submit" className="btn btn-warning">logout</button>
               </li>
             </ul>
             {/* <form className="d-flex" role="search">
@@ -40,6 +40,6 @@ function NavBar() {
       </nav>
     )
 
-}
+};
 
 export default NavBar;

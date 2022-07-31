@@ -1,13 +1,13 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-function CheckoutCard({ addToCart, title, price, image, id, handleToCart, setHandleToCart}) {
-    console.log(addToCart)
+function CheckoutCard({ title, price, image, id, handleToCart, setHandleToCart}) {
+    
     function handleAddClick() {
         setHandleToCart(!handleToCart)
-    }
+    };
 
-    const btn = handleToCart?"btn btn-success":"btn btn-warning"
+    const btn = handleToCart?"btn btn-success":"btn btn-warning";
     return (
         <div className='col-3'>
         <div className="card gx-1" style={{width: 18 + "rem", height: 28 + "rem"}}>
@@ -21,6 +21,6 @@ function CheckoutCard({ addToCart, title, price, image, id, handleToCart, setHan
         </div>
     </div>
     )
-}
+};
 
 export default CheckoutCard;

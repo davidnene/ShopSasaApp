@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import {Link} from "react-router-dom";
 
 function Card({ title, price, image, id, toCartCheckout, setToCartCheckout }) {
-    const [handleToCart, setHandleToCart] = useState(false)
-
-
     
+    const [handleToCart, setHandleToCart] = useState(false);
+
+
     function handleAddClick() {
         
         if (handleToCart === false){
@@ -18,7 +18,7 @@ function Card({ title, price, image, id, toCartCheckout, setToCartCheckout }) {
             itemToCart.toCart = false
             setToCartCheckout(()=>[...toCartCheckout, itemToCart])
         }
-    }
+    };
     
     const itemToCart = {
         image: image,
@@ -26,7 +26,7 @@ function Card({ title, price, image, id, toCartCheckout, setToCartCheckout }) {
         price: price,
         id: id,
         toCart: handleToCart
-    }
+    };
     
     const btn = handleToCart?"btn btn-success":"btn btn-warning"
     
