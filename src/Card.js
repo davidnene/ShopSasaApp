@@ -1,14 +1,34 @@
 import React, { useState } from "react";
 import {Link} from "react-router-dom";
 
-function Card({ item, title, price, image, id }) {
-    const [toCart, setToCart] = useState(false)
+function Card({ item, title, price, image, id, toCartCheckout, setToCartCheckout}) {
+    const [handleToCart, setHandleToCart] = useState(false)
 
+
+    
     function handleAddClick() {
-        setToCart(!toCart)
+        
+        if (handleToCart === false){
+        setHandleToCart(true)
+        itemToCart.toCart = true
+        setToCartCheckout(()=>[...toCartCheckout, itemToCart])
+        
+        } else if (handleToCart === true) {
+            setHandleToCart(()=> false)
+            itemToCart.toCart = false
+            setToCartCheckout(()=>[...toCartCheckout, itemToCart])
+        }
     }
-
-    const btn = toCart?"btn btn-success":"btn btn-warning"
+    
+    const itemToCart = {
+        image: image,
+        title: title,
+        price: price,
+        id: id,
+        toCart: handleToCart
+    }
+    
+    const btn = handleToCart?"btn btn-success":"btn btn-warning"
     
     return (
     <div className='col-3'>
@@ -17,7 +37,7 @@ function Card({ item, title, price, image, id }) {
             <div className="card-body">
                 <h5 className="card-title">{title}</h5>
                 <p className="card-text">${price}</p>
-                <button className={btn} onClick={handleAddClick}>{toCart?"Remove from Cart":"Add to Cart"}</button><br/>
+                <button className={btn} onClick={handleAddClick}>{handleToCart?"Remove from Cart":"Add to Cart"}</button><br/>
                 <Link exact="true" to={`/products/${id}`} >See details</Link>     
             </div>
         </div>

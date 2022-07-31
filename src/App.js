@@ -10,7 +10,9 @@ import DisplayItem from './DisplayItem';
 
 function App() {
   const [items, setItems] = useState([]);
-  
+  const [addToCart, setAddToCart] = useState([])
+  const [handleToCart, setHandleToCart] = useState(false)
+ 
   function handleItems() {
     fetch('https://fakestoreapi.com/products')
     .then(res => res.json())
@@ -24,8 +26,8 @@ function App() {
     <div> 
       <Switch>
         <Route exact path ="/products">
-          <NavBar/>
-          <Products items={items}/>
+          <NavBar />
+          <Products items={items} addToCart = {addToCart} setAddToCart={setAddToCart} handleToCart={handleToCart} setHandleToCart={setHandleToCart}/>
         </Route>
         <Route exact path={`/products/:id`}>
                 <DisplayItem items = {items}/>
@@ -36,7 +38,7 @@ function App() {
         </Route>
         <Route exact path="/checkout">
           <NavBar/>
-          <Checkout/>
+          <Checkout addToCart ={addToCart} setAddToCart={setAddToCart} handleToCart={handleToCart} setHandleToCart={setHandleToCart} />
         </Route>
         <Route exact path="/">
           <Login/>
